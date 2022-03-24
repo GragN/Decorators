@@ -39,9 +39,13 @@ directories = {
 
 
 @decorator('\Новый путь\к новой папке')
-def list():
-    for value in documents:
-        return f'{value["type"]} "{value["number"]}" "{value["name"]}"'
+def people():
+    number = str(input('введите номер '))
+    for id, value in enumerate(documents):
+        if value["number"] == number:
+            return (value["name"])
+        elif id >= (len(documents)-1):
+            return ('такого номера не существует')
 
-print(list())
+print(people())
 
